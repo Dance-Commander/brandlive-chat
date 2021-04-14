@@ -1,0 +1,5 @@
+// USER
+export const SET_USERNAME = "SET_USERNAME";
+
+// MESSAGE
+export const MESSAGE_RECIEVED = "MESSAGE_RECIEVED";

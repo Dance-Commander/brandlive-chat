@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {LoginComponent} from './components/Login';
+import {ChatWindow} from './components/ChatWindow';
+import type { RootState } from './redux/store';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const username = useSelector((state: RootState) => state.user.username);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {username ? <ChatWindow />: <LoginComponent />}
     </div>
   );
 }
